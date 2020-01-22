@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>USER RECORDS</title>
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
+  </head>
+  <body>
+    <!-- <div class="container">
+    <h1>Welcome!!!</h1>
+    <h2>Sign up here</h2>
+    <form method="POST">
+      {{ form.as_p}}
+      {% csrf_token %}
+      <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+  </div> -->
+   <h2>Here is the record: </h2>
+    <div class="djangotwo">
+      {% if user_record %}
+    <ol>
+        {% for u in user_record %}
+        <li>User Info</li>
+        <ul>
+        <li>{{ u.first_name}}</li>
+        <li>{{ u.last_name}}</li>
+        <li>{{ u.email}}</li>
+        </ul>
+        {% endfor %}
+
+      {% else %}
+      <p>NO ACCESS RECORDS</p>
+      </ol>
+      {% endif %}
+    </div>
+  </body>
+</html>

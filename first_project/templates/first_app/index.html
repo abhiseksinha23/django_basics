@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>First template</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/>
+  </head>
+  <body>
+  <!--  <h1>first one</h1>
+    {{ insert_me }}
+    <img src="static\images\Photo.jpg" alt="" style="width:200px; height:190px;">
+    <img src="{%static "images/photo.jpg" %}" alt="on no!">-->
+    <h1>Welcome</h1>
+    <h2>Here is the record: </h2>
+    <div class="djangotwo">
+      {% if access_record %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+        </thread>
+        {% for acc in access_record %}
+        <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>NO ACCESS RECORDS</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

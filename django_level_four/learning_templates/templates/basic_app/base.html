@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CONNECTED</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar  navbar-expand-sm bg-dark">
+<div class="container">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-brand" href="{% url 'index' %}">BRAND</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'admin:index' %}">ADMIN</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'basic_app:other' %}">OTHER</a>
+    </li>
+  </ul>
+  </div>
+</nav>
+
+      <div class="container">
+          {% block body_block %}
+          {% endblock %}
+      </div>
+  </body>
+</html>
